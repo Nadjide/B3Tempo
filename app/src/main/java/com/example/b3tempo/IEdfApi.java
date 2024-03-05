@@ -1,0 +1,22 @@
+package com.example.b3tempo;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
+
+public interface IEdfApi {
+
+    // https://particulier.edf.fr/services/rest/referentiel/getNbTempoDays?TypeAlerte=TEMPO
+
+    @GET("services/rest/referentiel/getNbTempoDays")
+    Call<TempoDaysLeft> getTempoDaysLeft(@Query("TypeAlerte")String alertType);
+
+    //https://particulier.edf.fr/services/rest/referentiel/searchTempoStore?dateRelevant=2024-02-20&TypeAlerte=TEMPO
+
+    @GET("services/rest/referentiel/searchTempoStore")
+    Call<TempoDaysColor> getTempoDaysColor(@Query("dateRelevant")String dateRelevant, @Query("TypeAlerte")String alertType);
+
+    // https://particulier.edf.fr/services/rest/referentiel/historicTEMPOStore?dateBegin=2023&dateEnd=2024
+    @GET("services/rest/referentiel/historicTEMPOStore")
+    Call<TempoDate> getTempoDate(@Query("dateBegin")String dateBegin, @Query("dateEnd")String dateEnd);
+}
