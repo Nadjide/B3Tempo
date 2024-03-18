@@ -7,16 +7,16 @@ public class TempoDate {
 
     @SerializedName("date")
     @Expose
-    private TempoColor date;
+    private String date;
     @SerializedName("couleur")
     @Expose
     private TempoColor couleur;
 
-    public TempoColor getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(TempoColor date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -26,13 +26,5 @@ public class TempoDate {
 
     public void setCouleur(TempoColor couleur) {
         this.couleur = couleur;
-    }
-
-    public TempoColor getDateBegin() {
-        return date;
-    }
-
-    public TempoColor getDateEnd() {
-        return date;
     }
 }

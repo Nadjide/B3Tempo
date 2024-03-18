@@ -1,5 +1,7 @@
 package com.example.b3tempo;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -19,5 +21,8 @@ public interface IEdfApi {
 
     // https://particulier.edf.fr/services/rest/referentiel/historicTEMPOStore?dateBegin=2023&dateEnd=2024
     @GET("services/rest/referentiel/historicTEMPOStore")
-    Call<TempoDate> getTempoDate(@Query("dateBegin")String dateBegin, @Query("dateEnd")String dateEnd);
+    Call<TempoHistory> getTempoHistory(
+            @Query("dateBegin") String dateBegin,
+            @Query("dateEnd") String dateEnd
+    );
 }
